@@ -156,12 +156,14 @@ module.exports = {
       topic: {
         type: Sequelize.STRING,
         allowNull:false,
+        primaryKey:true,
+        unique:true,
       },
       note_by: {
         type: Sequelize.STRING,
         allowNull:false,
         references: {    //Foreign key reference
-          model: 'notes',
+          model: 'Notes',
           key:'topic',
         },
         
